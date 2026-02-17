@@ -8,10 +8,10 @@ import {
   FaTachometerAlt,
   FaUsers,
 } from "react-icons/fa";
-import { useAuth } from "../../context/authContext";
+import { useAuth } from "../../context/AuthContext";
 
 const Sidebar = () => {
-    const {user} = useAuth()
+  const { user } = useAuth()
   return (
     <div className="bg-gray-800 text-white h-screen fixed left-0 top-0 bottom-0 space-y-2 w-64">
       <div className="bg-teal-600 h-12 flex items-center justify-center">
@@ -21,8 +21,7 @@ const Sidebar = () => {
         <NavLink
           to="/employee-dashboard"
           className={({ isActive }) =>
-            `${
-              isActive ? "bg-teal-500 " : " "
+            `${isActive ? "bg-teal-500 " : " "
             } flex items-center space-x-4 block py-2.5 px-4 rounded`
           }
           end
@@ -33,8 +32,7 @@ const Sidebar = () => {
         <NavLink
           to={`/employee-dashboard/profile/${user._id}`}
           className={({ isActive }) =>
-            `${
-              isActive ? "bg-teal-500 " : " "
+            `${isActive ? "bg-teal-500 " : " "
             } flex items-center space-x-4 block py-2.5 px-4 rounded`
           }
         >
@@ -44,8 +42,7 @@ const Sidebar = () => {
         <NavLink
           to={`/employee-dashboard/leaves/${user._id}`}
           className={({ isActive }) =>
-            `${
-              isActive ? "bg-teal-500 " : " "
+            `${isActive ? "bg-teal-500 " : " "
             } flex items-center space-x-4 block py-2.5 px-4 rounded`
           }
         >
@@ -55,8 +52,7 @@ const Sidebar = () => {
         <NavLink
           to={`/employee-dashboard/salary/${user._id}`}
           className={({ isActive }) =>
-            `${
-              isActive ? "bg-teal-500 " : " "
+            `${isActive ? "bg-teal-500 " : " "
             } flex items-center space-x-4 block py-2.5 px-4 rounded`
           }
         >
@@ -66,8 +62,7 @@ const Sidebar = () => {
         <NavLink
           to="/employee-dashboard/setting"
           className={({ isActive }) =>
-            `${
-              isActive ? "bg-teal-500 " : " "
+            `${isActive ? "bg-teal-500 " : " "
             } flex items-center space-x-4 block py-2.5 px-4 rounded`
           }
         >

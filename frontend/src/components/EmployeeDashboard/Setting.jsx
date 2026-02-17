@@ -2,12 +2,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useAuth } from "../../context/authContext";
+import { useAuth } from "../../context/AuthContext";
 
 const Setting = () => {
   const navigate = useNavigate();
   const { user } = useAuth()
-    const [setting, setSetting] = useState({
+  const [setting, setSetting] = useState({
     userId: user._id,
     oldPassword: "",
     newPassword: "",
@@ -17,7 +17,7 @@ const Setting = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-      setSetting({ ...setting, [name]: value });
+    setSetting({ ...setting, [name]: value });
   };
 
   const handleSubmit = async (e) => {
@@ -37,7 +37,7 @@ const Setting = () => {
         );
         if (response.data.success) {
           navigate("/admin-dashboard/employees");
-            setError("")
+          setError("")
         }
       } catch (error) {
         if (error.response && !error.response.data.success) {

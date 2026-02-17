@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt'
 import connectToDatabase from './db/db.js'
 
 const userRegister = async () => {
-    connectToDatabase()
+    await connectToDatabase()
     try {
         const hashPassword = await bcrypt.hash("admin", 10)
         const newUser = new User({
@@ -13,8 +13,10 @@ const userRegister = async () => {
             role: "admin"
         })
         await newUser.save()
-    } catch(error) {
+    } catch (error) {
         console.log(error)
+    } finally {
+        process.exit();
     }
 }
 
